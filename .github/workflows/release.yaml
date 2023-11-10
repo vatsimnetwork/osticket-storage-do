@@ -21,4 +21,4 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          files: dist/auth-vatsim.phar
+          files: dist/storage-do.phar
