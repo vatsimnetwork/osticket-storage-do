@@ -1,0 +1,44 @@
+{
+    "name": "vatsim/osticket-storage-do",
+    "description": "osTicket plugin for uploading files to DigitalOcean Spaces",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "William McKinnerney",
+            "email": "git@williammck.net",
+            "homepage": "https://williammck.net"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^8.0",
+        "aws/aws-sdk-php": "^3.283"
+    },
+    "require-dev": {
+        "bamarni/composer-bin-plugin": "^1.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vatsim\\Osticket\\Spaces\\": "src/"
+        }
+    },
+    "scripts": {
+        "pre-autoload-dump": [
+            "Aws\\Script\\Composer\\Composer::removeUnusedServices"
+        ]
+    },
+    "extra": {
+        "aws/aws-sdk-php": [
+            "S3"
+        ],
+        "bamarni-bin": {
+            "bin-links": true,
+            "forward-command": true
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "bamarni/composer-bin-plugin": true
+        }
+    }
+}
